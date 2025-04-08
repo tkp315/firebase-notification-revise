@@ -6,7 +6,7 @@ if(admin.apps.length===0){
         credential:admin.credential.cert({
             projectId:process.env.FIREBASE_ADMIN_PROJECTID,
             clientEmail:process.env.FIREBASE_ADMIN_CLIENT,
-            privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY.replace(/\\n/g, "\n")
+             privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY!.replace(/\\n/g, "\n")
         })
     })
 }
