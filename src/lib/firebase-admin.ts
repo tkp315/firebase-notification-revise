@@ -1,5 +1,5 @@
 import admin from 'firebase-admin'
-import serviceKey from '../../service_key.json'
+
 
 if(admin.apps.length===0){
     admin.initializeApp({
