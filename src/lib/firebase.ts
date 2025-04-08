@@ -4,17 +4,15 @@ import { getMessaging, isSupported, Messaging } from "firebase/messaging";
 
 
 
-
 const firebaseConfig = {
-  apiKey: "AIzaSyC7eoKFwpeXNH0KfP5uXzjh1NCmZ4kXXdo",
-  authDomain: "fir-61f66.firebaseapp.com",
-  projectId: "fir-61f66",
-  storageBucket: "fir-61f66.firebasestorage.app",
-  messagingSenderId: "731456850392",
-  appId: "1:731456850392:web:56db706c0e3de305078aad",
-  measurementId: "G-QMQVRQWP4V"
+  apiKey: "AIzaSyA14QNWlG0OyS9UAgMQNzLw2-8_M-h5PIc",
+  authDomain: "notification-4338e.firebaseapp.com",
+  projectId: "notification-4338e",
+  storageBucket: "notification-4338e.firebasestorage.app",
+  messagingSenderId: "869593322124",
+  appId: "1:869593322124:web:8037e9761097799b2da1a9",
+  measurementId: "G-36NNW3GGEF"
 };
-
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 let messaging:Messaging
