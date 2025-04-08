@@ -2,7 +2,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -10,16 +9,15 @@ import {
 } from "@/components/ui/dialog"
 
 import { Button } from "@/components/ui/button";
-import { useSession } from "next-auth/react";
+
 import useFCMToken from "./hooks/useFCMToken";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 
 export default function Home() {
-  const {data,status} = useSession()
-
-  const {notificationPermissionStatus,token} = useFCMToken()
+  
+  const {token} = useFCMToken()
   console.log(token)
   const [users,setUsers] = useState([])
   

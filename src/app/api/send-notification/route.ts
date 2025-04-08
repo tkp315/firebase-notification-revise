@@ -1,7 +1,6 @@
 import connectToDB from "@/lib/db";
 import admin from "@/lib/firebase-admin";
 import { User } from "@/models/user.model";
-import mongoose from "mongoose";
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
