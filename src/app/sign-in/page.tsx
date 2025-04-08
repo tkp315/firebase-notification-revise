@@ -6,7 +6,7 @@ function Page() {
 
 
   const handleLogin =()=>{
-   const res = signIn('google',{
+  signIn('google',{
     callbackUrl:'/'
    })
   }
