@@ -55,7 +55,7 @@ export const authOptions: NextAuthOptions = {
         if (user) {
           token.accessToken = account?.access_token;
           token.role = user.role;
-          token._id = String(user1._id);
+          token._id = String(user1?._id);
         }
         console.log("Token at options:",token)
         return token;

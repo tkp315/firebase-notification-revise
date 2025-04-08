@@ -46,7 +46,7 @@ try {
         const link = `/about`
     
         const payload:admin.messaging.MulticastMessage = {
-            tokens:userFCMTokens,
+            tokens:userFCMTokens.filter((token): token is string => token !== undefined),
             notification:{
                 title:MESSAGE_DATA.title,
                 body:MESSAGE_DATA.message

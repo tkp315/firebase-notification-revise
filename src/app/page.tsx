@@ -19,19 +19,20 @@ export default function Home() {
   
   const {token} = useFCMToken()
   console.log(token)
-  const [users,setUsers] = useState([])
+  const [users,setUsers] = useState<{email:string}[]>([])
   
-  const [selectedUser,setSelectedUser] = useState([])
+  const [selectedUser,setSelectedUser] = useState<string[]>([])
 
-  function handleChange(e){
+  function handleChange(e:React.ChangeEvent<HTMLInputElement>){
     const {value} = e.target
   
 
-  setSelectedUser((prev)=>{
-    if(!prev.includes(value)){
-      return [...prev,value]
+  setSelectedUser((prev) => {
+    if (!prev.includes(value)) {
+      return [...prev, value];
     }
-  })
+    return prev;
+  });
   }
 
   useEffect(()=>{

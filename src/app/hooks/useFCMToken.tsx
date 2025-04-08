@@ -4,7 +4,7 @@ import { requestNotificationPermission } from "@/lib/firebase-token";
 import { getMessaging, onMessage, Unsubscribe } from "firebase/messaging";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
 export async function getNotificationPermissionAndToken() {
@@ -42,7 +42,8 @@ const useFCMToken = ()=>{
     const isLoading = useRef(false)
 
 
-    const loadToken = async ()=>{
+    const loadToken = useCallback(async ()=>{
+
         if(isLoading.current)return;
 
         isLoading.current = true
@@ -74,11 +75,11 @@ const useFCMToken = ()=>{
 
         isLoading.current=false
       
-    }
+    }, [status, token]);
 
     useEffect(()=>{
         loadToken()
-    },[])
+    },[loadToken])
 
     useEffect(()=>{
         let unsubscribe: Unsubscribe|null = null;

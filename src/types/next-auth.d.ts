@@ -13,7 +13,7 @@ declare module 'next-auth'{
     interface Session extends DefaultSession {
         accessToken:string,
         role:string,
-        _id:string
+        _id?:string
     }
 }
 
