@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { getMessaging } from "firebase/messaging";
+import { getMessaging, isSupported, Messaging } from "firebase/messaging";
 
 
 
@@ -17,4 +17,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const messaging = getMessaging(app)
+let messaging:Messaging
+if (typeof window !== "undefined") {
+  isSupported().then((supported) => {
+    if (supported) {
+      messaging = getMessaging(app);
+    } else {
+      console.warn("Firebase messaging not supported on this browser.");
+    }
+  });
+}
+export {messaging}
